@@ -13,12 +13,16 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  server:
-    port: 8085
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   mvc:
-   throwExceptonIfNoHandlerFound: true
+    throw-exception-if-no-handler-found: true
   thymeleaf:
     cache: false
+
+server:
+  port: 8085
+  error:
+    include-message: always
 
 # Logging 설정
 logging:
@@ -27,13 +31,13 @@ logging:
     com.example: DEBUG
 
 # Swagger 설정 (사용하는 경우)
-swagger:
-  api-info:
-    title: My API
-    description: API for my application
-    version: 1.0.0
+# 경우swagger:
+#  api-info:
+#    title: My API
+#    description: API for my application
+#    version: 1.0.0
 
 # Custom 설정 (필요에 따라 추가)
-custom:
-  property1: value1
-  property2: value2
+# custom:
+#  property1: value1
+#  property2: value2
